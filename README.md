@@ -210,8 +210,8 @@ However, these labels should not be considered as a reliable source of informati
 - ANTsPy: For advanced registration and image processing.
 - SimpleITK: For additional registration, IO, and filtering functionality.
 - NumPy and SciPy: Fundamental libraries for numeric computations.
-- scikit-learn: If your expectation-maximization is dependent on it (optional).
-- Additional libraries depending on your environment, such as glob, json, xml.etree.ElementTree for file management and results handling.
+- scikit-learn: Expectation-maximization algorithm.
+- Additional libraries such as glob, json, xml.etree.ElementTree for file management and results handling.
 
 Install these via pip or conda:
 
