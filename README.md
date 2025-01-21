@@ -16,10 +16,11 @@ This repository describes a pipeline designed for rapid automatic segmentation o
 The principal goal is to provide a unified framework that integrates:
 
 - **Preprocessing** of MRI sequences (T1, T2, FLAIR).
-- **Correction** of field inhomogeneities and other distortions.
+- **Bias field correction** and **noise reduction**.
 - **Registration** of multiple sequences.
 - **Probabilistic atlas registration** and generation of a **similarity map**.
-- **Tissue segmentation** and **lesion refinement**.
+- **Tissue segmentation**
+- **Lesion segmentation**.
 - **Anatomical characterization** of lesions (volume, subcortical location, etc.).
 
 Significant effort was placed on selecting the most effective methods at each stage based on comparative reviews and minimizing external dependencies to facilitate potential deployment in a clinical environment.
