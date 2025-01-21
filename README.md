@@ -15,13 +15,12 @@
 This repository describes a pipeline designed for rapid automatic segmentation of lesions in brain MRI, their 3D visualization, and anatomical characterization.
 The principal goal is to provide a unified framework that integrates:
 
-- **Preprocessing** of MRI sequences (T1, T2, FLAIR).
-- **Bias field correction** and **noise reduction**.
-- **Registration** of multiple sequences.
+- **Preprocessing**. Includes skull stripping, bias field correction and noise reduction of MRI sequences
+- **Registration**. Aligns the sequences to a common spatial reference.
 - **Probabilistic atlas registration** and generation of a **similarity map**.
-- **Tissue segmentation**
-- **Lesion segmentation**.
-- **Anatomical characterization** of lesions (volume, subcortical location, etc.).
+- **Tissue segmentation**. Classifies brain tissues into gray matter, white matter and CSF.
+- **Lesion segmentation**. Identifies and segments lesions in the MRI sequences.
+- **Anatomical characterization**. Quantifies lesion properties such as volume, subcortical location, and other metrics for further analysis.
 
 Significant effort was placed on selecting the most effective methods at each stage based on comparative reviews and minimizing external dependencies to facilitate potential deployment in a clinical environment.
 
