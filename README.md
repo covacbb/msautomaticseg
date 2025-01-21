@@ -12,7 +12,7 @@
 
 ## Overview
 
-This repository describes a pipeline designed for rapid automatic segmentation of lesions in brain MRI, their 3D visualization, and anatomical characterization (see the overview diagram).
+This repository describes a pipeline designed for rapid automatic segmentation of lesions in brain MRI, their 3D visualization, and anatomical characterization.
 The principal goal is to provide a unified framework that integrates:
 
 - **Preprocessing** of MRI sequences (T1, T2, FLAIR).
