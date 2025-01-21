@@ -67,7 +67,7 @@ Example output files for each step are provided for Patient-1, considering T1, T
 These initial steps prepare the MRI volumes for subsequent analysis.
 
 **Skull Stripping**  
-The skull, meninges, and other extracerebral tissues are removed from T1-weighted images to facilitate registration, bias correction, and intensity-based tissue classification. A Python-based version of the BET algorithm (FSL) is employed, provided by the `brainextractor` library. The outcome is a binary brain mask.
+The skull, meninges, and other extracerebral tissues are removed from T1-weighted images to facilitate registration, bias correction, and intensity-based tissue classification. A Python-based version of the BET algorithm (FSL) is employed, provided by the brainextractor library. The outcome is a binary brain mask.
 
 Output: brain_mask_t1.nii.gz
 
