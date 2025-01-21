@@ -81,6 +81,8 @@ The N4 Bias Field Correction algorithm (available in ANTs) is used to address in
 
 Output: t1_corrected.nii, t2_corrected.nii.gz, flair_corrected.nii.gz saved at data/Patient-1/preprocessing/
 
+---
+
 ### 2. Coregistration
 
 Coregistration is the process of aligning multiple imaging modalities to ensure that anatomical structures correspond accurately across all images. This is important for subsequent tissue segmentation steps.
@@ -180,9 +182,9 @@ In cases where the Patient-x files belong to a training or evaluation database c
 Output: lesion_stats.json, dsc.json, lesions_3d_surface.vtk saved to data/Patient-1/results
 
 **Note:**
-Mapping white matter lesions with a subcortical anatomical atlas can provide some information:
-- Helps identify whether a lesion is adjacent to or disrupting major subcortical nuclei (as the thalamus or basal ganglia) or key pathways such as the internal capsule or corticospinal tract and provides insight into potential functional impacts (e.g., motor deficits if the internal capsule is affected).
-- As the atlas includes some white matter pathways, lesion mapping can help infer the disrupted connections.
+Mapping white matter lesions with a subcortical anatomical atlas can provide some information.
+It helps identify whether a lesion is adjacent to or disrupting major subcortical nuclei (as the thalamus or basal ganglia) or key pathways such as the internal capsule or corticospinal tract and provides insight into potential functional impacts (e.g., motor deficits if the internal capsule is affected).
+As the atlas includes some white matter pathways, lesion mapping can help infer the disrupted connections.
 
 However, these labels should not be considered as a reliable source of information. White matter lesions often affect complex networks of pathways that are not captured by atlases designed for gray matter localization. Functional information (as connectivity analysis using DTI/tractography) is required to fully understand the implications of white matter lesions, which anatomical atlases alone cannot provide.
 
