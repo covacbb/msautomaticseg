@@ -119,7 +119,7 @@ These priors comprise the registered reference probabilistic atlases (GM, WM, CS
 
 1. **Probabilistic Atlases**  
    - The ICBM probabilistic atlases provide probability maps of gray matter (GM), white matter (WM), and cerebrospinal fluid (CSF), compiled from large-population MR images.
-   - Since probabilistic atlases represent only the likelihood of each tissue type (without full anatomical intensities), they are typically aligned using the same transformations computed for a reference atlas. An additional affine registration refines the alignment of each probabilistic map to the target image (which is the coregistered T1 image, because reference atlas is T1-w).
+   - Since probabilistic atlases represent only the likelihood of each tissue type (without complete anatomical intensity information), they are typically aligned using the same transformations computed for a reference atlas. To further refine the alignment of each probabilistic map to the target image (the coregistered T1-weighted image, as the reference atlas is T1-weighted), an additional affine registration step is applied.
 
 2. **Similarity Map (NCC)**  
    - A reference atlas (ICBM Template T1) after the brain extraction step is registered to the patient’s T1 sequence.  
