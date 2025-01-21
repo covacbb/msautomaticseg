@@ -25,9 +25,6 @@ def preprocessing_patient(patient_num):
     - patient_num (int): The patient ID for which data is processed.
     - image_types (list of str): List of image modalities to process (e.g., "pd", "t1").
     """
-    print("/------------------------------------\\")
-    print("|            Preprocessing            |")
-    print("\\------------------------------------/")
     
     # Construct paths using the provided base_folder
     base_folder = f"../data/Patient-{patient_num}/"
