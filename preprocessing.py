@@ -49,9 +49,7 @@ def preprocessing_patient(patient_num):
     # Process each image type
     image_types = ["pd", "t1", "t2", "flair"]
     for image_type in image_types:
-        print("\t-------------------------------------")
-        print(f"\t         Processing {image_type.upper()}        ")
-        print("\t-------------------------------------")
+        print(f"-- Processing {image_type.upper()} --")
     
         file_list = glob.glob(baseline_search_pattern)
         files = [
