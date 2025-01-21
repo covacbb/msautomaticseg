@@ -76,7 +76,8 @@ Saved to: Patient-1/
 **Noise Reduction (Anisotropic Diffusion)**  
 After isolating the brain, anisotropic diffusion filtering is appllied to reduce noise while preserving important structural details and lesion edges. This step enhances the efficiency of later bias field correction and segmentation.
 
-Output: T1_adf.nii.gz, t2_adf.nii.gz, flair_adf.nii.gz saved at data/Patient-1/preprocessing/
+Output: T1_adf.nii.gz, t2_adf.nii.gz, flair_adf.nii.gz
+Saved to: data/Patient-1/preprocessing/
 
 **Bias Field Correction**  
 The N4 Bias Field Correction algorithm (available in ANTs) is used to address inhomogeneities in the MRI intensities caused by magnetic field or RF coil non-uniformities. As a result, the corrected images exhibit a more uniform intensity scale, facilitating tissue classification.
