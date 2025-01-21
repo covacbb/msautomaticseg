@@ -139,7 +139,7 @@ Healthy brain tissues (GM, WM, CSF) are approximated using a Gaussian Mixture Mo
 
 We implement an **Expectation-Maximization (EM) algorithm**:
 1. **Initialization**  
-Means and covariances and weights for each tissue class are initialized using the probabilistic atlases combined with the similarity map.
+Means, covariances and weights for each tissue class are initialized using the probabilistic atlases combined with the similarity map.
 
 2. **Expectation**  
 Calculates posterior probabilities (“responsibilities”) that each voxel belongs to each class, given the current parameters.  
