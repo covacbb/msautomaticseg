@@ -51,6 +51,7 @@ atlases/
   atlas_white.nii.gz
   JulichBrainAtlas_3.0_areas_MPM_b_N10_nlin2ICBM152asym2009c.nii.gz
   JulichBrainAtlas_3.0_areas_MPM_b_N10_nlin2ICBM152asym2009c.xml
+```
 
 Patient-x/ subfolders (preprocessed/, transforms/, atlas/, segmentation/, results/) is created and populated as the pipeline advances.
 
@@ -194,7 +195,7 @@ Install these via pip or conda:
 
 ```bash
 pip install nibabel antspyx SimpleITK numpy scipy scikit-learn
-
+```
 
 ## Usage
 
@@ -203,7 +204,7 @@ pip install nibabel antspyx SimpleITK numpy scipy scikit-learn
 3. Run the pipeline by executing the main() function in your script:
 ```bash
 python main.py [patient_number]
-
+```
 The pipeline will sequentially execute Preprocessing, Coregistration, Atlas Registration, Segmentation, and Results. All outputs will be placed in the respective subfolders within data/Patient-31/.
 
 
