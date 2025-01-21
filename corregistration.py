@@ -24,9 +24,6 @@ def corregistration_patient(patient_num):
     - None: The function saves the registered images (T1, T2, and brain mask) to the "transforms" folder 
       under the patient's directory.
     """
-    print("/-----------------------------------\\")
-    print("|           Coregistration           |")
-    print("\\-----------------------------------/")
     
     base_folder = f"../data/Patient-{patient_num}/"
     images_folder = os.path.join(base_folder, "preprocessed/")
