@@ -148,7 +148,7 @@ Atlas priors are integrated into the Gaussian probability density model.
 3. **Maximization**  
 Updates the model parameters (means, covariances, and mixing weights for each tissue class) based on posterior probabilities from the Expectation step.
 
-4. **Convergence Criterion**  
+4. **Convergence Criteria**  
 The log-likelihood is evaluated. We measure changes in the 
 Iteration continues until the log-likelihood change falls below (10^{-6}) or a maximum iteration limit (set at 200) is reached.
 
