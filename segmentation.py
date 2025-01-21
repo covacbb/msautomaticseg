@@ -18,7 +18,7 @@ def segmentation_patient(patient_num):
     """
     Perform segmentation on the data of a specific patient.
     
-    Args:
+    Parameters:
     patient_num (int): The patient number to process.
     
     Returns:
