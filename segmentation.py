@@ -26,10 +26,6 @@ def segmentation_patient(patient_num):
     results (dict): A dictionary containing the tissue percentages for each lesion.
     """
     
-    print("/------------------------------------\\")
-    print("|            Segmentation             |")
-    print("\\------------------------------------/")
-    
     base_folder = f"../data/Patient-{patient_num}/"
     images_folder = os.path.join(base_folder, "preprocessed/")
     transforms_folder = os.path.join(base_folder, "transforms/")
