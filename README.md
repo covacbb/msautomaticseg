@@ -4,8 +4,8 @@
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Data Organization](#data-organization)
-3. [Pipeline Steps](#pipeline-steps)
+2. [Data organization](#data-organization)
+3. [Pipeline steps](#pipeline-steps)
 4. [Requirements](#requirements)
 5. [Usage](#usage)
 6. [Limitations](#limitations)
