@@ -27,10 +27,6 @@ def results_patient(refined_lesions_image, patient_num):
     - dsc (float): The Dice Similarity Coefficient between refined lesions and annotated lesions.
     """
     
-    print("/------------------------------------\\")
-    print("|            Results                  |")
-    print("\\------------------------------------/")
-    
     base_folder = f"../data/Patient-{patient_num}/"
     results_folder = os.path.join(base_folder, "results/")
     # Create directory if it doesn't exist
