@@ -68,14 +68,17 @@ These initial steps prepare the MRI volumes for subsequent analysis.
 
 **Skull Stripping**  
 The skull, meninges, and other extracerebral tissues are removed from T1-weighted images to facilitate registration, bias correction, and intensity-based tissue classification. A Python-based version of the BET algorithm (FSL) is employed, provided by the `brainextractor` library. The outcome is a binary brain mask.
+
 Output: brain_mask_t1.nii.gz saved at Patient-1/
 
 **Noise Reduction (Anisotropic Diffusion)**  
 After isolating the brain, anisotropic diffusion filtering is appllied to reduce noise while preserving important structural details and lesion edges. This step enhances the efficiency of later bias field correction and segmentation.
+
 Output: T1_adf.nii.gz, t2_adf.nii.gz, flair_adf.nii.gz saved at data/Patient-1/preprocessing/
 
 **Bias Field Correction**  
 The N4 Bias Field Correction algorithm (available in ANTs) is used to address inhomogeneities in the MRI intensities caused by magnetic field or RF coil non-uniformities. As a result, the corrected images exhibit a more uniform intensity scale, facilitating tissue classification.
+
 Output: t1_corrected.nii, t2_corrected.nii.gz, flair_corrected.nii.gz saved at data/Patient-1/preprocessing/
 
 ### 2. Coregistration
@@ -96,6 +99,7 @@ We use a multiresolution approach, initially aligning low-resolution versions of
 The moving image is resampled using the final affine transform with *b-spline* interpolation to preserve image quality. Any negative intensities introduced by interpolation are thresholded.
 
 Output: brain_mask_registered.nii.gz, t1_registered.nii.gz, t2_registered.nii.gz saved at data/Patient-1/transforms/
+
 ---
 
 ### 3. Atlas Registration and Similarity Map
@@ -113,7 +117,8 @@ These priors comprise the registered reference probabilistic atlases (GM, WM, CS
    - The Normalized Cross-Correlation (NCC) is computed in small local windows (3×3×3) between the atlas and patient’s T1 sequence at each voxel.  
    - The result is a similarity map (0–1 range) that quantifies the local agreement between the atlas and patient’s anatomy. This map is used in the GMM initialization of the segmentation by locally weighting the atlas-based priors. This improves the characterization of tissue anatomy and the identification of atypical intensities, including potential lesions.
 
-   Output: affine_transform.mat, atlas_gray.nii.gz, atlas_white.nii.gz, atlas_csf.nii.gz, ICBM_Template_moved.nii.gz, t1_atlas_similarity.nii.gz,  saved at data/Patient-1/atlas
+Output: affine_transform.mat, atlas_gray.nii.gz, atlas_white.nii.gz, atlas_csf.nii.gz, ICBM_Template_moved.nii.gz, t1_atlas_similarity.nii.gz,  saved at data/Patient-1/atlas
+
 ---
 
 ### 4. Tissue Segmentation
@@ -138,6 +143,7 @@ Iteration continues until the log-likelihood change falls below (10^{-6}) or a m
 After convergence, we derive posterior probability maps for each tissue. A final classification volume is built by selecting the highest-probability class at each voxel. 
 
 Output: None
+
 ---
 
 ### 5. Lesion Segmentation
