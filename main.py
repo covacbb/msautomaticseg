@@ -5,7 +5,7 @@ import sys
 
 def main():
     """
-    Main entry point that orchestrates all the steps:
+    Main entry point that executes all the steps:
       1) Preprocessing
       2) Coregistration
       3) Atlas processing
