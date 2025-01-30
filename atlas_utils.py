@@ -274,7 +274,7 @@ def get_atlases(fixed_img, mov_atlases, transform):
         except Exception as err:
             print("\tExceptionObject caught!")
             print(err)
-            continue  # or return here depending on error handling
+            continue  # or return
 
     return atlases
 
