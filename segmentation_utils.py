@@ -525,8 +525,10 @@ def calculate_threshold(mu, alpha, sigma, fwhm, factor):
     # New standard deviation
     sigma_new = math.sqrt(
         (math.exp((sigma_final * factor) ** 2) - 1) * math.exp(2 * mu * factor + (sigma_final * factor) ** 2))
+    # New alpha
+    alpha_new = alpha * sigma / sigma_new
     # New threshold
-    t_new = mu_new + alpha * sigma_new
+    t_new = mu_new + alpha_new * sigma_new
 
     print(f"New Threshold: {t_new}")
     print(f"(mu_new: {mu_new}, sigma_new: {sigma_new}, alpha: {alpha})")
