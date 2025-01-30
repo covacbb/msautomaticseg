@@ -15,7 +15,7 @@
 This repository describes a pipeline designed for rapid automatic segmentation of lesions in brain MRI, their 3D visualization, and anatomical characterization.
 The principal goal is to provide a unified framework that integrates:
 
-- **Preprocessing**. Includes skull stripping, bias field correction and noise reduction of MRI sequences
+- **Preprocessing**. Includes skull stripping, bias field correction and noise reduction of MRI sequences.
 - **Registration**. Aligns the sequences to a common spatial reference.
 - **Probabilistic atlas registration** and generation of a **similarity map**.
 - **Tissue segmentation**. Classifies brain tissues into gray matter, white matter and CSF.
