@@ -19,7 +19,7 @@ The principal goal is to provide a unified framework that integrates:
 - **Registration**. Aligns the sequences to a common spatial reference.
 - **Probabilistic atlas registration** and generation of a **similarity map**.
 - **Tissue segmentation**. Classifies brain tissues into gray matter, white matter and CSF.
-- **Lesion segmentation**. Identifies and segments lesions in the MRI sequences.
+- **Lesion segmentation**. Identifies and segments lesions in the FLAIR sequence.
 - **Anatomical characterization**. Quantifies lesion properties such as volume, subcortical location, and other metrics for further analysis.
 
 Significant effort was placed on selecting the most effective methods at each stage based on comparative reviews and minimizing external dependencies to facilitate potential deployment in a clinical environment.
