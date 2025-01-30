@@ -45,7 +45,6 @@ data/
     ...
 atlases/
   ICBM_Template.nii.gz
-  ICBM_Template_mask.nii.gz
   atlas_csf.nii.gz
   atlas_gray.nii.gz
   atlas_white.nii.gz
@@ -78,14 +77,14 @@ After isolating the brain, anisotropic diffusion filtering is appllied to reduce
 
 Output: T1_adf.nii.gz, t2_adf.nii.gz, flair_adf.nii.gz
 
-Saved to: data/Patient-1/preprocessing/
+Saved to: data/Patient-1/preprocessed/
 
 **Bias Field Correction**  
 The N4 Bias Field Correction algorithm (available in ANTs) is used to address inhomogeneities in the MRI intensities caused by magnetic field or RF coil non-uniformities. As a result, the corrected images exhibit a more uniform intensity scale, facilitating tissue classification.
 
 Output: t1_corrected.nii, t2_corrected.nii.gz, flair_corrected.nii.gz
 
-Saved to: data/Patient-1/preprocessing/
+Saved to: data/Patient-1/preprocessed/
 
 ---
 
