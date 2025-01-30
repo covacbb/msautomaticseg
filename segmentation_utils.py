@@ -309,7 +309,7 @@ def lesion_new(tissue, flair, alpha, factor, min_size, ce_radius, dil_radius, wm
     flair_e2 = contrast_enhancement(flair, ce_radius)
     
     # Threshold estimation
-    print("\t\\- Threshold estimation")
+    print("Threshold estimation")
     flair_array = sitk.GetArrayFromImage(flair_e)
     tissue_array = sitk.GetArrayFromImage(tissue)
     
@@ -324,7 +324,7 @@ def lesion_new(tissue, flair, alpha, factor, min_size, ce_radius, dil_radius, wm
     t = calculate_threshold(mu, alpha, sigma, fwhm, factor)
     
     # Thresholding FLAIR image
-    print("\t\\- Thresholding and refinement")
+    print("Thresholding and refinement")
     flair_thresholded = sitk.BinaryThreshold(flair_e2, lowerThreshold=t, upperThreshold=float("inf"))
     
     # Initialize the fill holes filter
@@ -338,13 +338,13 @@ def lesion_new(tissue, flair, alpha, factor, min_size, ce_radius, dil_radius, wm
     # Connected Component Analysis to identify individual lesions
     connected_component_filter = sitk.ConnectedComponentImageFilter()
     components = connected_component_filter.Execute(sitk.Cast(filled_lesions_img, sitk.sitkUInt8))
-    print(f"\tNumber of initial components: {connected_component_filter.GetObjectCount()}")
+    print(f"Number of initial components: {connected_component_filter.GetObjectCount()}")
     
     # Relabel components based on size
     relabel_filter = sitk.RelabelComponentImageFilter()
     relabel_filter.SetMinimumObjectSize(min_size)
     relabelled_components = relabel_filter.Execute(components)
-    print(f"\tNumber of relabelled components (size-filtered): {relabel_filter.GetNumberOfObjects()}")
+    print(f"Number of relabelled components (size-filtered): {relabel_filter.GetNumberOfObjects()}")
     
     # Components array
     lesions_array = sitk.GetArrayFromImage(relabelled_components)
