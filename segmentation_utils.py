@@ -183,7 +183,7 @@ def expectation_maximization(brainIntensities, atlases, threshold, maxIteration=
         posteriors_before = posteriors.copy()
         posteriors /= (np.sum(posteriors, axis=1, keepdims=True) + np.finfo(float).eps)
 
-        if it == 0:  # Plot the first iteration posteriors before and after normalization
+        if it == 0:  #plots the first iteration posteriors before and after normalization
             plt.figure(figsize=(12, 6))
             plt.subplot(1, 2, 1)
             plt.hist(posteriors_before[:, 0], bins=50, label='CSF', alpha=0.5)
@@ -289,7 +289,7 @@ def lesion_new(tissue, flair, alpha, factor, min_size, ce_radius, dil_radius, wm
     and surrounding tissue characteristics.
 
     Parameters:
-    - tissue (SimpleITK.Image): A labeled brain tissue image where different regions (e.g., GM, WM) are identified.
+    - tissue (SimpleITK.Image): A labeled brain tissue image where different regions (GM, WM, CSF) are identified.
     - flair (SimpleITK.Image): The FLAIR image to process for lesion detection.
     - alpha (float): Scaling factor for the threshold calculation.
     - min_size (int): Minimum size of a lesion to be considered valid.
@@ -304,7 +304,7 @@ def lesion_new(tissue, flair, alpha, factor, min_size, ce_radius, dil_radius, wm
     - results (dict): A dictionary containing the tissue percentages for each lesion.
     """
     
-    # Enhance contrast of the FLAIR image (assuming method 'ContrastEnhancement' exists or a similar one is used)
+    # Enhance contrast of the FLAIR image
     flair_e = exponential_transformation(flair, factor)
     flair_e2 = contrast_enhancement(flair, ce_radius)
     
@@ -425,7 +425,7 @@ def contrast_enhancement(image, radius):
     """
     # Define the structuring element as a ball
     structuring_element = sitk.sitkBall
-    radius = [radius] * image.GetDimension()  # Ensure the radius is defined for all dimensions
+    radius = [radius] * image.GetDimension()  #radius must be defined for all dimensions
 
     # Apply grayscale dilation
     dilated_image = sitk.GrayscaleDilate(image, radius, structuring_element)
@@ -528,8 +528,8 @@ def calculate_threshold(mu, alpha, sigma, fwhm, factor):
     # New threshold
     t_new = mu_new + alpha * sigma_new
 
-    print(f"\tNew Threshold: {t_new}")
-    print(f"\t(mu_new: {mu_new}, sigma_new: {sigma_new}, alpha: {alpha})")
+    print(f"New Threshold: {t_new}")
+    print(f"(mu_new: {mu_new}, sigma_new: {sigma_new}, alpha: {alpha})")
       
     return t_new
 
@@ -641,7 +641,7 @@ def plot_labels(label_image):
     
     # Plot the selected slice of the relabeled components
     plt.figure(figsize=(7, 7))
-    plt.imshow(slice_data, cmap='nipy_spectral')  # 'nipy_spectral' is a good colormap for distinct colors
+    plt.imshow(slice_data, cmap='nipy_spectral')
     plt.colorbar()
     plt.title('Relabeled Components - Slice')
     plt.axis('off')
